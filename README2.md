@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Jbapp
 
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.19-3.
@@ -29,3 +30,7 @@ Run `ng github-pages:deploy` to deploy to Github Pages.
 ## Further help
 
 To get more help on the `angular-cli` use `ng --help` or go check out the [Angular-CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+=======
+# jbapp
+A show case demo for how routing with children routes work in Angular2
+>>>>>>> 70f17418a727fa94e70cb37915ebf0d727cebd5f
