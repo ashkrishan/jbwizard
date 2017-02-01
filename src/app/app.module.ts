@@ -4,15 +4,26 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import { CommentsComponent } from './comments/comments.component';
+import { AuthorComponent } from './comments/author.component';
+
+import {routing} from './app.routing';
+import { HomeComponent } from './home/home.component';
+import { AuthorListComponent } from './comments/author-list.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CommentsComponent,
+    AuthorComponent,
+    HomeComponent,
+    AuthorListComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    routing
   ],
   providers: [],
   bootstrap: [AppComponent]
