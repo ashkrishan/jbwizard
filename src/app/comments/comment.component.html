@@ -1,0 +1,17 @@
+<article class="panel panel-default">
+    <div class="panel-body">
+        <!--I have used elvis operator i.e. "?" here as the value of coment is intially set to null when comment 
+        component is intialised hence the error. As the page is demanding content to be displayed but as it is initialised
+        there is no content to be displayed for comment.content object attribute-->
+        {{ comment?.content }}  
+    </div>
+    <footer class="panel-footer">
+        <div class="author">
+            <!--Same here -->
+            {{ comment?.screenName }}
+        </div>
+        <div class="config">
+            <a (click)="onDelete()">Delete</a>
+        </div>
+    </footer>
+</article>
