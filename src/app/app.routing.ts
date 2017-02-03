@@ -1,24 +1,17 @@
-import { Routes, RouterModule } from '@angular/router';
+import { Routes, RouterModule } from "@angular/router";
 
-import { CommentsComponent } from './comments/comments.component';
-import { HomeComponent } from './home/home.component';
-import { AuthorComponent } from './comments/author.component';
-import { AuthorListComponent } from './comments/author-list.component';
+import { CommentsComponent } from "./comments/comments.component";
+import { AuthorListComponent} from "./comments/author-list.component";
+import { AuthenticationComponent } from "./auth/authentication.component";
+import { AUTH_ROUTES } from "./auth/auth.routes";
+import { AUTHOR_ROUTES } from "./comments/author.routes";
 
-
-const APP_ROUTE: Routes = [
-    { path: '', component: HomeComponent, pathMatch: 'full' },
-    // { path: 'comments', component: CommentsComponent },
-    {
-        path: 'comments', component: CommentsComponent,
-        children: [
-            { path: '', redirectTo: 'author-list', pathMatch: 'full' },
-            {path: 'author-list', component: AuthorListComponent, pathMatch: 'full'},
-            {path: 'author-list/:id', component: AuthorComponent},
-        ]
-
-    },
-
+const APP_ROUTES: Routes = [
+    { path: '', redirectTo: 'author', pathMatch: 'full' },
+    { path: 'author', component: AuthorListComponent, children: AUTHOR_ROUTES  },
+    { path: 'auth', component: AuthenticationComponent, children: AUTH_ROUTES },
+    
+    { path: 'comments', component: CommentsComponent}
 ];
 
-export const routing = RouterModule.forRoot(APP_ROUTE);
+export const routing = RouterModule.forRoot(APP_ROUTES);

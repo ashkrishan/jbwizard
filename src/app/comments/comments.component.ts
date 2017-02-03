@@ -1,25 +1,20 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
+import { Component } from "@angular/core";
 
 @Component({
-  selector: 'app-comments',
-  templateUrl: './comments.component.html',
-  styleUrls: ['./comments.component.css']
+    selector: 'app-comments',
+    template: `
+        <div class="row">
+            <app-comment-input></app-comment-input>
+        </div>
+        <hr>
+        <div class="row">
+            <app-comment-list></app-comment-list>
+        </div>
+    `
 })
-export class CommentsComponent implements OnInit, OnDestroy {
-  private id: number;
-  private sub;
-  constructor(private route: ActivatedRoute) { }
-
- ngOnInit() {
-    this.sub = this.route.params.subscribe(params =>
-      this.id = +params['id']  // + converts string id to a number
-    );
-
-  }
-
-ngOnDestroy() {
-  this.sub.unsubscribe();
-}
+export class CommentsComponent {
 
 }
+
+
+  

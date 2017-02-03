@@ -1,31 +1,46 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { HttpModule } from "@angular/http";
 
-import { AppComponent } from './app.component';
-import { CommentsComponent } from './comments/comments.component';
-import { AuthorComponent } from './comments/author.component';
-
-import {routing} from './app.routing';
-import { HomeComponent } from './home/home.component';
-import { AuthorListComponent } from './comments/author-list.component';
+import { AppComponent } from "./app.component";
+import { CommentComponent } from "./comments/comment.component";
+import { CommentListComponent } from "./comments/comment-list.component";
+import { CommentInputComponent } from "./comments/comment-input.component";
+import { CommentsComponent } from "./comments/comments.component";
+import { AuthenticationComponent } from "./auth/authentication.component";
+import { AuthorListComponent } from "./comments/author-list.component";
+import { HeaderComponent } from "./header.component";
+import { routing } from "./app.routing";
+import { LogoutComponent } from "./auth/logout.component";
+import { SignupComponent } from "./auth/signup.component";
+import { SigninComponent } from "./auth/signin.component";
+import { AuthorComponent } from "./comments/author.component";
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    CommentsComponent,
-    AuthorComponent,
-    HomeComponent,
-    AuthorListComponent
-  ],
-  imports: [
-    BrowserModule,
+    declarations: [
+        AppComponent,
+        CommentComponent,
+        CommentListComponent,
+        CommentInputComponent,
+        CommentsComponent,
+        AuthenticationComponent,
+        AuthorListComponent,
+        HeaderComponent,
+        LogoutComponent,
+        SignupComponent,
+        SigninComponent,
+        AuthorComponent
+    ],
+    imports: [
+    BrowserModule, 
     FormsModule,
-    HttpModule,
-    routing
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    routing,
+    ReactiveFormsModule,
+    HttpModule
+    ],
+    bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+
+}
